@@ -3,3 +3,4 @@
 # To install them, run:  pip install -r requirements.txt
 
 python-dotenv>=1.0    # loads secrets from your .env file
+openpyxl>=3.1         # reads/writes the Excel PFMEA template (resources/PFMEA-Template.xlsx)
