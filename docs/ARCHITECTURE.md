@@ -57,5 +57,12 @@ Everything is one folder tracked by **git**. You **commit** (save snapshots) and
 (upload) it so others can **clone** (download) and use it. Improvements flow both ways.
 See `GIT_GUIDE.md`.
 
-<!-- TODO: as your agent grows, note here anything special about how it works —
-     e.g. which services it connects to, or any unusual steps. -->
+## Specific to this agent
+
+- The five workflows (UC1–UC5) all read/write a common **rows JSON**
+  (`{"header": {...}, "rows": [...]}`) and the Excel template
+  `resources/PFMEA-Template.xlsx`, so output from one workflow feeds the next.
+- No external services or secrets are needed — the tools are local Python (`openpyxl`).
+- Source-of-truth data lives in `resources/`: the template (format, scales, thresholds),
+  `standard-failure-modes.md`, `lessons-learned.json`, and the reusable FMEA library
+  (`fmea-library/` + `fmea-family-index.json`).

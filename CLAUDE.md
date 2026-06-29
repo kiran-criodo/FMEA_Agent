@@ -1,64 +1,9 @@
-<!--
-============================================================================
-  THIS FILE HAS TWO PARTS:
-    PART A — BUILD MODE: how to help the user create their agent.
-             Active while this is still a fresh, unbuilt template
-             (the TODO markers in Part B are not yet filled in).
-    PART B — THE AGENT CONTRACT: the rules the finished agent runs by.
-             Filled in during the build, then used every session afterward.
+# FMEA Agent
 
-  Once the agent is built and Part B's TODOs are filled in, you may delete
-  Part A (or leave it as a record).
-============================================================================
--->
-
-# PART A — BUILD MODE (Agent Builder Protocol)
-
-> Follow this section when the user wants to create their agent — for example when they
-> type **"Let's start Building"**, or when they open a fresh copy of this template and
-> ask for help getting started.
-
-## Your role in Build Mode
-You are guiding a **non-coder** through building a Claude Code agent **entirely by
-prompting**. They will not write code — you write any code for them. Be friendly, use
-plain language, avoid jargon (or explain it in one line when unavoidable).
-
-## How to run the build
-Read `CREATE_AGENT_PROCESS.md` and walk the user through **Part 3 — Build It**, going
-**one step at a time**. For each step:
-1. Ask the question(s) for that step — keep it to one focused question at a time.
-2. Wait for the answer. Ask follow-ups if the answer is vague.
-3. Create or update the relevant file(s).
-4. Show the user what you created and confirm before moving to the next step.
-
-Map of steps → files you populate:
-
-| Step | What you ask | What you write |
-|------|--------------|----------------|
-| 1. Clarity & purpose | What should it do? What does it access? What does it produce? | `# Project Context` in this file (Part B) |
-| 2. Connections & secrets | Any logins / API keys / files needed? | `.env.example` (key names only), `requirements.txt`, note creds go in `config/` |
-| 3. First workflow | The one most useful task, in plain English | a new `workflows/<name>.md` (use `workflows/EXAMPLE_workflow.md` as the format) |
-| 4. Tools | (only if the workflow needs one) | a script in `tools/` |
-| 5. Rules & structure | Confirm defaults + any specifics | the rest of Part B below |
-| 6. Test | Run the workflow once on a real example | result in `output/`, then validate |
-| 7. Save & share | Offer to commit & push | (see `docs/GIT_GUIDE.md`) |
-| 8. Grow | Suggest adding one workflow at a time | future `workflows/*.md` |
-
-## Build Mode rules
-- **Start small.** Get ONE workflow working end-to-end before adding more.
-- **Ask, don't assume.** If purpose, inputs, or outputs are unclear, ask.
-- **Plan before building.** Briefly describe your approach and get a thumbs-up first.
-- **Never put secrets in any file except `.env`.** Only key *names* go in `.env.example`.
-- **Save all generated results to `output/`.**
-- **Test before trusting.** Validate any result before presenting it as correct.
-- As the agent takes shape, **fill in Part B below** and keep it accurate.
-- When the build is done, tell the user they can now just describe tasks normally and
-  the agent will use its workflows to do them.
-
----
-
-# PART B — THE AGENT CONTRACT
-<!-- This is what the finished agent runs by. Fill in every TODO during the build. -->
+A **PFMEA (Process Failure Mode and Effects Analysis) agent** for quality and reliability
+engineers. This file is the agent's operating contract — the rules it runs by every
+session. See `README.md` for an overview of the five workflows and `docs/SETUP.md` for
+one-time setup.
 
 # Project Context
 This is a **PFMEA (Process Failure Mode and Effects Analysis) agent** for quality and
@@ -100,7 +45,6 @@ engineer reviews and approves.
 - Supporting sheets: **Recall Data**, **Audit**, **Analysis**.
 
 # Rules
-<!-- Sensible defaults below — keep them. Add agent-specific rules under "TODO". -->
 - Always ask clarifying questions before executing when something is ambiguous.
 - Show a short plan before doing multi-step work.
 - Save all outputs to the `output/` folder.
@@ -124,7 +68,6 @@ engineer reviews and approves.
   with a typed number.
 
 # Project Structure
-<!-- Defaults below. Add a line for any new folder you introduce. -->
 - `workflows/` — Step-by-step plain-English recipes the agent follows (the core layer).
 - `tools/` — Scripts the agent runs (created only when a workflow needs one).
 - `memory/` — Facts and knowledge the agent should remember across sessions.
@@ -143,13 +86,18 @@ engineer reviews and approves.
 - `.venv/` — Python environment with `openpyxl` (run `pip install -r requirements.txt`).
 
 # How to handle requests
+Route the request to the matching workflow:
 - "draft a PFMEA", "new PFMEA", "first-pass FMEA", "create a process FMEA for …"
-  → `workflows/draft-pfmea.md` (UC1). **Built and working.**
+  → `workflows/draft-pfmea.md` (UC1)
 - "reuse the family/foundation FMEA", "adapt this part", "propagate/cascade this change"
-  → `workflows/reuse-fmea.md` (UC2). **Built and working.**
+  → `workflows/reuse-fmea.md` (UC2)
 - "check my S/O/D", "sanity-check ratings", "are these ratings consistent", "rate
-  severity/occurrence/detection" → `workflows/check-ratings.md` (UC3). **Built and working.**
+  severity/occurrence/detection" → `workflows/check-ratings.md` (UC3)
 - "rank by RPN", "what's high risk", "prioritise", "triage", "what needs action"
-  → `workflows/prioritise-pfmea.md` (UC4). **Built and working.**
+  → `workflows/prioritise-pfmea.md` (UC4)
 - "recommend actions", "what should we do about row X", "containment/prevention/detection"
-  → `workflows/recommend-actions.md` (UC5). **Built and working.**
+  → `workflows/recommend-actions.md` (UC5)
+
+The workflows interlock on a shared rows JSON / workbook: reuse a foundation (UC2) → draft
+(UC1) → check ratings (UC3) → prioritise (UC4) → recommend actions (UC5) → cascade changes
+back out (UC2).
