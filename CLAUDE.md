@@ -143,7 +143,8 @@ engineer reviews and approves.
 - "draft a PFMEA", "new PFMEA", "first-pass FMEA", "create a process FMEA for …"
   → `workflows/draft-pfmea.md` (UC1). **Built and working.**
 - (planned) "reuse the family/foundation FMEA", "adapt this part" → UC2 workflow.
-- (planned) "check my S/O/D", "rate severity/occurrence/detection" → UC3 workflow.
+- "check my S/O/D", "sanity-check ratings", "are these ratings consistent", "rate
+  severity/occurrence/detection" → `workflows/check-ratings.md` (UC3). **Built and working.**
 - "rank by RPN", "what's high risk", "prioritise", "triage", "what needs action"
   → `workflows/prioritise-pfmea.md` (UC4). **Built and working.**
 - "recommend actions", "what should we do about row X", "containment/prevention/detection"
