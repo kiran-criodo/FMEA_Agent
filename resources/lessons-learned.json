@@ -1,0 +1,122 @@
+{
+  "_about": "Organizational corrective-action memory (CAPAs / 8D / lessons learned) that UC5 draws on to propose containment, prevention and detection actions for high-risk PFMEA rows. SEED/EXAMPLE entries — replace with your real CAPA/8D history. The 'keywords' drive automatic matching to failure modes; 'source' is the record reference.",
+  "lessons": [
+    {
+      "id": "8D-2023-014",
+      "title": "Bus-bar weld escapes (insufficient penetration)",
+      "keywords": ["weld", "cold weld", "penetration", "joint resistance", "bus bar", "busbar", "insufficient"],
+      "containment": "Quarantine suspect weld lots; add a temporary 100% post-weld resistance check and sample destructive pull-test until the schedule is re-validated.",
+      "prevention": "Lock the weld schedule (power/energy/time) under change control; degrease/clean mating surfaces; control cell-to-busbar gap with the fixture.",
+      "detection": "Closed-loop in-process weld energy/force-vs-displacement monitoring with auto-reject; periodic destructive pull/peel testing.",
+      "source": "8D-2023-014"
+    },
+    {
+      "id": "8D-2022-009",
+      "title": "Weld burn-through / case breach",
+      "keywords": ["burn-through", "burnthrough", "over-weld", "overweld", "breach", "spatter", "burn"],
+      "containment": "Quarantine and 100% visual + leak/insulation check of affected units.",
+      "prevention": "Cap upper power limit in the weld program; verify laser focus/standoff at setup; first-article approval each shift.",
+      "detection": "Post-weld vision inspection for burn-through and spatter; thermal/plume monitoring.",
+      "source": "8D-2022-009"
+    },
+    {
+      "id": "CAPA-2021-077",
+      "title": "Cell/PCB damage during manual handling and ESD",
+      "keywords": ["damage", "dent", "scratch", "esd", "handling", "loading", "drop", "deform"],
+      "containment": "Segregate and inspect units from the affected station; audit ESD controls.",
+      "prevention": "Soft/keyed handling fixtures; ESD wrist straps and mats; operator handling certification.",
+      "detection": "Post-operation visual/dimensional check; continuous ESD event monitoring at the bench.",
+      "source": "CAPA-2021-077"
+    },
+    {
+      "id": "8D-2020-031",
+      "title": "Wrong part / material mix-up at point of use",
+      "keywords": ["wrong", "mix-up", "mixup", "wrong cell", "wrong material", "wrong component", "chemistry", "similar"],
+      "containment": "Segregate suspect builds; verify lot genealogy against the build record.",
+      "prevention": "Kitting with single-piece flow; physically separate look-alike parts; scan-to-confirm part number before use.",
+      "detection": "Barcode/vision part verification interlock that blocks the operation on mismatch.",
+      "source": "8D-2020-031"
+    },
+    {
+      "id": "LL-2019-005",
+      "title": "Reversed / wrong-orientation component",
+      "keywords": ["polarity", "reversed", "orientation", "misorientation", "reverse", "orient"],
+      "containment": "100% orientation/polarity check on suspect units before the next operation.",
+      "prevention": "Poka-yoke keyed fixture that physically prevents seating in the wrong orientation.",
+      "detection": "Vision or electrical polarity check immediately after the operation.",
+      "source": "LL-2019-005"
+    },
+    {
+      "id": "CAPA-2022-103",
+      "title": "Test escape / false accept (gauge capability)",
+      "keywords": ["false accept", "escape", "accepts", "tester", "gauge", "calibration", "limits", "probe", "cal drift"],
+      "containment": "Re-test retained and shipped suspect lots; temporarily tighten accept limits.",
+      "prevention": "Run a gauge R&R study; set accept limits from demonstrated capability; scheduled probe maintenance.",
+      "detection": "Periodic calibration plus 'test-the-tester' with known-good and known-bad masters each shift.",
+      "source": "CAPA-2022-103"
+    },
+    {
+      "id": "8D-2021-058",
+      "title": "Inspection/test step bypassed or not run",
+      "keywords": ["bypass", "skipped", "not tested", "interlock", "seated", "defeated", "bypassed"],
+      "containment": "Audit traceability to find untested units; hold and test them.",
+      "prevention": "Hard interlock — the next operation is blocked without a pass record; serial-scan gate at the station.",
+      "detection": "MES-enforced routing with a bypass alarm and supervisor escalation.",
+      "source": "8D-2021-058"
+    },
+    {
+      "id": "CAPA-2020-044",
+      "title": "Wrong / missing / unreadable label (traceability loss)",
+      "keywords": ["label", "traceability", "serial", "mislabel", "unreadable", "labelling", "labeling"],
+      "containment": "Hold affected product and re-verify labels against the build record.",
+      "prevention": "Print-on-demand labels from the build record; scan-verify the label before pack-out.",
+      "detection": "Vision check for label presence/readability plus checksum/serial scan verification.",
+      "source": "CAPA-2020-044"
+    },
+    {
+      "id": "LL-2021-012",
+      "title": "Contamination / foreign object (FOD)",
+      "keywords": ["contamination", "fod", "foreign", "dirt", "debris", "oil", "moisture", "clean"],
+      "containment": "Clean the line and inspect product made since the last clean point.",
+      "prevention": "Cleanliness controls, covers/enclosures, and FOD discipline at the station.",
+      "detection": "Vision/cleanliness verification; particle or contamination checks on a sample basis.",
+      "source": "LL-2021-012"
+    },
+    {
+      "id": "8D-2019-022",
+      "title": "Under/over torque, loose or cross-threaded fasteners",
+      "keywords": ["torque", "fastener", "loose", "stripped", "cross-thread", "joint", "under-torque", "over-torque"],
+      "containment": "Re-torque audit on suspect assemblies.",
+      "prevention": "Torque-controlled tools with error-proofed sequence; fastener presence/seating check.",
+      "detection": "Torque-monitoring tool with per-joint data logging and periodic audit.",
+      "source": "8D-2019-022"
+    },
+    {
+      "id": "8D-2020-014",
+      "title": "Missing component / under-count",
+      "keywords": ["missing", "under-count", "undercount", "count", "quantity", "omitted"],
+      "containment": "100% count verification of suspect builds.",
+      "prevention": "Full-nest presence sensors before the next operation; scan-count at pack-out.",
+      "detection": "Presence/vision count check that blocks progression on a short count.",
+      "source": "8D-2020-014"
+    },
+    {
+      "id": "LL-2022-031",
+      "title": "Moisture-driven screen plugging / throughput loss",
+      "keywords": ["moisture", "plugging", "screen", "throughput", "plug", "wet"],
+      "containment": "Divert high-moisture material; manually reduce feed rate to avoid shutdown.",
+      "prevention": "Upstream drying control; queue/blend material by moisture to a stable mean.",
+      "detection": "In-line moisture sensors driving automatic feed-rate adjustment.",
+      "source": "LL-2022-031"
+    },
+    {
+      "id": "CAPA-2021-090",
+      "title": "Equipment wear from ash / inorganics / abrasives",
+      "keywords": ["wear", "ash", "inorganic", "soil", "abrasive", "hammer", "disc", "plate"],
+      "containment": "Increase inspection and replacement frequency for wear parts.",
+      "prevention": "Remove inorganics upstream (screening / air classification); specify harder wear materials.",
+      "detection": "Motor-current and vibration trend monitoring; scheduled wear measurement.",
+      "source": "CAPA-2021-090"
+    }
+  ]
+}

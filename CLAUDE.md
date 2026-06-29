@@ -146,4 +146,5 @@ engineer reviews and approves.
 - (planned) "check my S/O/D", "rate severity/occurrence/detection" → UC3 workflow.
 - "rank by RPN", "what's high risk", "prioritise", "triage", "what needs action"
   → `workflows/prioritise-pfmea.md` (UC4). **Built and working.**
-- (planned) "recommend actions", "what should we do about row X" → UC5 workflow.
+- "recommend actions", "what should we do about row X", "containment/prevention/detection"
+  → `workflows/recommend-actions.md` (UC5). **Built and working.**
