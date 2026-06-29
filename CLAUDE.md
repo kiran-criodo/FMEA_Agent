@@ -144,5 +144,6 @@ engineer reviews and approves.
   → `workflows/draft-pfmea.md` (UC1). **Built and working.**
 - (planned) "reuse the family/foundation FMEA", "adapt this part" → UC2 workflow.
 - (planned) "check my S/O/D", "rate severity/occurrence/detection" → UC3 workflow.
-- (planned) "rank by RPN", "what's high risk", "prioritise actions" → UC4 workflow.
+- "rank by RPN", "what's high risk", "prioritise", "triage", "what needs action"
+  → `workflows/prioritise-pfmea.md` (UC4). **Built and working.**
 - (planned) "recommend actions", "what should we do about row X" → UC5 workflow.
