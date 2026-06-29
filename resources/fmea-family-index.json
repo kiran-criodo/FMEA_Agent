@@ -1,0 +1,32 @@
+{
+  "_about": "FMEA family index for UC2 (reuse & propagate). 'foundations' are mature base FMEAs; 'children' are part-specific FMEAs derived from a foundation. Paths are relative to the repo root.",
+  "foundations": [
+    {
+      "id": "FND-BATTPACK",
+      "name": "Battery Pack Assembly (Foundation)",
+      "family": "battery pack assembly",
+      "keywords": [
+        "battery",
+        "pack",
+        "cell",
+        "fixture",
+        "weld",
+        "bus bar",
+        "busbar",
+        "laser",
+        "resistance test",
+        "label"
+      ],
+      "rows": "resources/fmea-library/foundation-battery-pack.json"
+    }
+  ],
+  "children": [
+    {
+      "id": "CHILD-BATTPACK-US",
+      "name": "Battery Pack v2 (ultrasonic + coolant plate)",
+      "derived_from": "FND-BATTPACK",
+      "part": "BP v2",
+      "rows": "resources/fmea-library/child-battery-pack-ultrasonic.json"
+    }
+  ]
+}

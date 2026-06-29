@@ -137,12 +137,16 @@ engineer reviews and approves.
 - `resources/PFMEA-Template.xlsx` — the company PFMEA template (source of truth for
   format, columns, scales, and risk thresholds).
 - `resources/standard-failure-modes.md` — checklist of common process failure modes.
+- `resources/lessons-learned.json` — corrective-action memory (CAPA/8D) for UC5.
+- `resources/fmea-library/` — foundation & child FMEAs (rows JSON) for UC2 reuse.
+- `resources/fmea-family-index.json` — maps foundations to their child FMEAs (UC2).
 - `.venv/` — Python environment with `openpyxl` (run `pip install -r requirements.txt`).
 
 # How to handle requests
 - "draft a PFMEA", "new PFMEA", "first-pass FMEA", "create a process FMEA for …"
   → `workflows/draft-pfmea.md` (UC1). **Built and working.**
-- (planned) "reuse the family/foundation FMEA", "adapt this part" → UC2 workflow.
+- "reuse the family/foundation FMEA", "adapt this part", "propagate/cascade this change"
+  → `workflows/reuse-fmea.md` (UC2). **Built and working.**
 - "check my S/O/D", "sanity-check ratings", "are these ratings consistent", "rate
   severity/occurrence/detection" → `workflows/check-ratings.md` (UC3). **Built and working.**
 - "rank by RPN", "what's high risk", "prioritise", "triage", "what needs action"
