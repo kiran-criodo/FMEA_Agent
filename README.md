@@ -9,6 +9,11 @@ brings the whole organisation's corrective-action history to every line.
 The agent **assists**; the engineer reviews and approves. It never treats a draft as a
 final, approved FMEA.
 
+> **Built live, on stage,** for automotive engineering leaders (Skill-Lync for Business,
+> 7 Aug 2026), using VS Code and Claude Code on the
+> [Agent Builder Template](https://github.com/kiran-criodo/agent-builder-template).
+> See real outputs on public DOE data in [`examples/`](examples/), no setup needed.
+
 ## What it can do
 
 | # | Capability | Say something like | Workflow |
@@ -48,6 +53,7 @@ reuse a foundation (UC2) → draft (UC1) → check ratings (UC3)
 | `tools/` | The scripts each workflow uses — see [tools/README.md](tools/README.md). |
 | `resources/` | `PFMEA-Template.xlsx` (source of truth), `standard-failure-modes.md`, `lessons-learned.json`, and the `fmea-library/` + `fmea-family-index.json` for reuse. |
 | `output/` | Generated PFMEAs, triage reports, action worksheets (git-ignored). |
+| `examples/` | Sample reports generated from public DOE FCIC data (committed). |
 | `docs/` | [SETUP](docs/SETUP.md), [ARCHITECTURE](docs/ARCHITECTURE.md), [GIT_GUIDE](docs/GIT_GUIDE.md). |
 
 ## Key conventions
